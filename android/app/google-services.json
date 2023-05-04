@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51350842615",
+    "project_id": "muscle-up-se-2101",
+    "storage_bucket": "muscle-up-se-2101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51350842615:android:4061cc7901b556a0f3b7f2",
+        "android_client_info": {
+          "package_name": "com.example.muscle_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51350842615-n9q4q4q2nikal4hj14ntla2b0k7h08fr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS8-0xg_uxUGkhIj7pXujd1iy7k9zGM2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51350842615-n9q4q4q2nikal4hj14ntla2b0k7h08fr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
