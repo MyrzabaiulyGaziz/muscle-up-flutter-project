@@ -5,6 +5,7 @@ import 'package:muscle_up/firebase_options.dart';
 import 'package:muscle_up/pages/homePage/widgets/app_header.dart';
 import 'package:muscle_up/pages/homePage/widgets/last_action.dart';
 import 'package:muscle_up/pages/homePage/widgets/popular_programs.dart';
+import 'package:muscle_up/pages/verify_email/verify_email_view.dart';
 import 'package:muscle_up/widgets/bottom_navigation.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,23 +13,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
+    return FutureBuilder(
+      future: Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
       ),
-      body: FutureBuilder(
-        future: Firebase.initializeApp(
-          options: DefaultFirebaseOptions.currentPlatform,
-        ),
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.done:
-              final user = FirebaseAuth.instance.currentUser;
-              if (user?.emailVerified ?? false) {
-                print('You are a verified user');
-              } else {
-                print('You need to verify your email first');
-              }
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.done:
+            final user = FirebaseAuth.instance.currentUser;
+            if (user?.emailVerified ?? false) {
               return Material(
                 child: Column(
                   children: [
@@ -39,12 +32,13 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               );
-              ;
-            default:
-              return Text('Loading...');
-          }
-        },
-      ),
+            } else {
+              return const VerifyEmailView();
+            }
+          default:
+            return CircularProgressIndicator();
+        }
+      },
     );
   }
 }

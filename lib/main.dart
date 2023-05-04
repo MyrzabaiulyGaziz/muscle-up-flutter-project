@@ -11,11 +11,11 @@ void main() {
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => LoginView(),
+        '/login': (context) => LoginView(),
         '/home': (context) => HomePage(),
         '/registration': (context) => RegistrationView(),
       },
-      initialRoute: '/registration',
+      initialRoute: '/home',
     ),
   );
 }
