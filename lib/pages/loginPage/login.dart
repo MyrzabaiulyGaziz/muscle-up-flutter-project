@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:muscle_up/firebase_options.dart';
-import 'package:muscle_up/pages/homePage/home.dart';
+import 'dart:developer' as devtools show log;
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -61,7 +61,7 @@ class _LoginViewState extends State<LoginView> {
                   final email = _email.text;
                   final password = _password.text;
                   try {
-                    final userCredential = await FirebaseAuth.instance
+                    await FirebaseAuth.instance
                         .signInWithEmailAndPassword(
                             email: email, password: password)
                         .then((value) => Navigator.of(context)
@@ -69,17 +69,19 @@ class _LoginViewState extends State<LoginView> {
                                 '/home', (route) => false));
                   } on FirebaseAuthException catch (e) {
                     if (e.code == 'user-not-found') {
-                      print('User not found');
+                      devtools.log('User not found');
                     } else if (e.code == 'wrong-password') {
-                      print('Wrong password');
+                      devtools.log('Wrong password');
                     }
                   }
                 },
                 child: const Text('Login')),
             TextButton(
               onPressed: () {
-                Navigator.of(context)
-                    .pushNamedAndRemoveUntil('/registration', (route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/registration',
+                  (route) => false,
+                );
               },
               child: const Text('Do not have an account? Sign up here!'),
             )
