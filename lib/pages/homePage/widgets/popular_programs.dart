@@ -7,9 +7,7 @@ class PopularPrograms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      width: double.infinity,
-      height: 100,
+    return Expanded(
       child: Column(children: [
         Text(
           'Popular programs',
@@ -17,8 +15,8 @@ class PopularPrograms extends StatelessWidget {
         ),
         CarouselSlider(
           options: CarouselOptions(
-            aspectRatio: 1.5,
-            viewportFraction: 0.9,
+            aspectRatio: 2.0,
+            viewportFraction: 0.5,
             enlargeCenterPage: false,
             enlargeStrategy: CenterPageEnlargeStrategy.height,
             enableInfiniteScroll: false,
