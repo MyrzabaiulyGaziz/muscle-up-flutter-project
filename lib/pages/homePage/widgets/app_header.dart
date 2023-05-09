@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as devtools show log;
 
+import 'package:muscle_up/constants/routes.dart';
+
 enum MenuAction { logout }
 
 class AppHeader extends StatelessWidget {
@@ -41,7 +43,7 @@ class AppHeader extends StatelessWidget {
                     await FirebaseAuth.instance.signOut();
                     // ignore: use_build_context_synchronously
                     Navigator.of(context).pushNamedAndRemoveUntil(
-                      '/login',
+                      loginRoute,
                       (_) => false,
                     );
                   }

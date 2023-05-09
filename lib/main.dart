@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:muscle_up/constants/routes.dart';
 import 'package:muscle_up/firebase_options.dart';
 import 'package:muscle_up/pages/calendar/calendar.dart';
 import 'package:muscle_up/pages/homePage/home.dart';
@@ -43,14 +44,14 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(appBarTheme: AppBarTheme(color: kBottomSelectedColor)),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/login': (context) => LoginView(),
-        '/home': (context) => BottomNav(),
-        '/registration': (context) => RegistrationView(),
-        '/workouts': (context) => WorkoutsPage(),
-        '/calendar': (context) => CalendarPage(),
+        loginRoute: (context) => LoginView(),
+        homeRoute: (context) => BottomNav(),
+        registerRoute: (context) => RegistrationView(),
+        workoutsRoute: (context) => WorkoutsPage(),
+        calendarRoute: (context) => CalendarPage(),
       },
       initialRoute:
-          FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
+          FirebaseAuth.instance.currentUser != null ? homeRoute : loginRoute,
     );
   }
 }
