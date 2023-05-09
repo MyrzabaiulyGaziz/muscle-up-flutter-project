@@ -7,6 +7,7 @@ import 'package:muscle_up/pages/calendar/calendar.dart';
 import 'package:muscle_up/pages/homePage/home.dart';
 import 'package:muscle_up/pages/loginPage/login.dart';
 import 'package:muscle_up/pages/registrationPage/registration.dart';
+import 'package:muscle_up/pages/verify_email/verify_email_view.dart';
 import 'package:muscle_up/pages/workoutsPage/workouts.dart';
 import 'package:muscle_up/widgets/bottom_navigation.dart';
 import 'constants/colors.dart';
@@ -49,6 +50,7 @@ class _MyAppState extends State<MyApp> {
         registerRoute: (context) => RegistrationView(),
         workoutsRoute: (context) => WorkoutsPage(),
         calendarRoute: (context) => CalendarPage(),
+        verifyEmailRoute: (context) => VerifyEmailView(),
       },
       initialRoute:
           FirebaseAuth.instance.currentUser != null ? homeRoute : loginRoute,

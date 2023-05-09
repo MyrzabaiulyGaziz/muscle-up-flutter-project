@@ -3,3 +3,4 @@ const registerRoute = '/registration';
 const homeRoute = '/home';
 const workoutsRoute = '/workouts';
 const calendarRoute = '/calendar';
+const verifyEmailRoute = '/verify-email';
