@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muscle_up/pages/homePage/widgets/app_header.dart';
 import 'package:muscle_up/pages/homePage/widgets/popular_programs.dart';
-import 'package:muscle_up/widgets/bottom_navigation.dart';
 
 class WorkoutsPage extends StatelessWidget {
   const WorkoutsPage({super.key});

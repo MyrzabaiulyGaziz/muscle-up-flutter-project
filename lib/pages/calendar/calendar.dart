@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muscle_up/pages/homePage/widgets/app_header.dart';
-import 'package:muscle_up/widgets/bottom_navigation.dart';
 
 class CalendarPage extends StatelessWidget {
   const CalendarPage({super.key});

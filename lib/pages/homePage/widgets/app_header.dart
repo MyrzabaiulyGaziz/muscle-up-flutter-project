@@ -1,10 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'dart:developer' as devtools show log;
-
 import 'package:muscle_up/constants/routes.dart';
-
-enum MenuAction { logout }
+import 'package:muscle_up/enums/menu_action.dart';
 
 class AppHeader extends StatelessWidget {
   final String text;
